@@ -1,4 +1,5 @@
 using System.ComponentModel.DataAnnotations;
+using System.Text.Json.Serialization;
 using shared.Domain;
 
 namespace shared;
@@ -26,6 +27,7 @@ public class User : BaseEntity
 
 
     [StringLength(20, ErrorMessage = "Vai trò người dùng không được phép quá 20 ký tự!")]
+    [JsonConverter(typeof(JsonStringEnumConverter))]
     public UserRole Role { get; set; } = UserRole.User;
 
 
@@ -36,7 +38,7 @@ public class User : BaseEntity
     [StringLength(20, ErrorMessage = "Số điện thoại không được phép quá 20 ký tự!")]
     public string Phone { get; set; } = string.Empty;
 
-
+    [JsonConverter(typeof(JsonStringEnumConverter))]
     public UserStatus Status { get; set; } = UserStatus.Active;
 
 
