@@ -37,6 +37,7 @@ public class User : BaseEntity
     [StringLength(20, ErrorMessage = "Số điện thoại không được phép quá 20 ký tự!")]
     public string Phone { get; set; } = string.Empty;
 
+
     [JsonConverter(typeof(JsonStringEnumConverter))]
     public UserStatus Status { get; set; } = UserStatus.Active;
 
