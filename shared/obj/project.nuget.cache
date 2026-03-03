@@ -1,8 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "u7d/pQc8IQo=",
+  "dgSpecHash": "1/3aVpKUEkw=",
   "success": true,
   "projectFilePath": "/Users/maaitlunghau/Documents/Projects/social-edu-platform/shared/shared.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "/Users/maaitlunghau/.nuget/packages/microsoft.netcore.app.ref/8.0.22/microsoft.netcore.app.ref.8.0.22.nupkg.sha512",
+    "/Users/maaitlunghau/.nuget/packages/microsoft.aspnetcore.app.ref/8.0.22/microsoft.aspnetcore.app.ref.8.0.22.nupkg.sha512"
+  ],
   "logs": []
 }
