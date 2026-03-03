@@ -115,3 +115,11 @@
 /Users/maaitlunghau/Documents/Projects/social-edu-platform/server/obj/Debug/net8.0/server.pdb
 /Users/maaitlunghau/Documents/Projects/social-edu-platform/server/obj/Debug/net8.0/server.genruntimeconfig.cache
 /Users/maaitlunghau/Documents/Projects/social-edu-platform/server/obj/Debug/net8.0/ref/server.dll
+/Users/maaitlunghau/Documents/Projects/social-edu-platform/server/bin/Debug/net8.0/Microsoft.AspNetCore.Authentication.JwtBearer.dll
+/Users/maaitlunghau/Documents/Projects/social-edu-platform/server/bin/Debug/net8.0/Microsoft.IdentityModel.Abstractions.dll
+/Users/maaitlunghau/Documents/Projects/social-edu-platform/server/bin/Debug/net8.0/Microsoft.IdentityModel.JsonWebTokens.dll
+/Users/maaitlunghau/Documents/Projects/social-edu-platform/server/bin/Debug/net8.0/Microsoft.IdentityModel.Logging.dll
+/Users/maaitlunghau/Documents/Projects/social-edu-platform/server/bin/Debug/net8.0/Microsoft.IdentityModel.Protocols.dll
+/Users/maaitlunghau/Documents/Projects/social-edu-platform/server/bin/Debug/net8.0/Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+/Users/maaitlunghau/Documents/Projects/social-edu-platform/server/bin/Debug/net8.0/Microsoft.IdentityModel.Tokens.dll
+/Users/maaitlunghau/Documents/Projects/social-edu-platform/server/bin/Debug/net8.0/System.IdentityModel.Tokens.Jwt.dll
