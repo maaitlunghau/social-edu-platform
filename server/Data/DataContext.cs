@@ -40,20 +40,13 @@ public class DataContext : DbContext
             .HasIndex(u => u.Email)
             .IsUnique();
 
-        modelBuilder.Entity<RefreshTokenRecords>()
-            .HasOne(rft => rft.User)
-            .WithMany(u => u.RefreshTokenRecords)
-            .HasForeignKey(rft => rft.UserId)
-            .OnDelete(DeleteBehavior.Cascade);
+        modelBuilder.Entity<User>()
+            .Property(u => u.Role)
+            .HasConversion<string>();
 
-        modelBuilder.Entity<RefreshTokenRecords>()
-            .HasIndex(rft => rft.UserId);
-
-        modelBuilder.Entity<RefreshTokenRecords>()
-            .HasIndex(rft => rft.RefreshToken);
-
-        modelBuilder.Entity<RefreshTokenRecords>()
-            .HasIndex(rft => rft.AccessTokenJTI);
+        modelBuilder.Entity<User>()
+            .Property(u => u.Status)
+            .HasConversion<string>();
 
         modelBuilder.Entity<User>().HasData(
             new User
@@ -127,5 +120,20 @@ public class DataContext : DbContext
                 UpdatedAtUTC = new DateTime(2025, 1, 1, 0, 0, 0, DateTimeKind.Utc)
             }
         );
+
+        modelBuilder.Entity<RefreshTokenRecords>()
+            .HasOne(rft => rft.User)
+            .WithMany(u => u.RefreshTokenRecords)
+            .HasForeignKey(rft => rft.UserId)
+            .OnDelete(DeleteBehavior.Cascade);
+
+        modelBuilder.Entity<RefreshTokenRecords>()
+            .HasIndex(rft => rft.UserId);
+
+        modelBuilder.Entity<RefreshTokenRecords>()
+            .HasIndex(rft => rft.RefreshToken);
+
+        modelBuilder.Entity<RefreshTokenRecords>()
+            .HasIndex(rft => rft.AccessTokenJTI);
     }
 }
