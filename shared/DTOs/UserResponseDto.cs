@@ -1,10 +1,9 @@
 using System.ComponentModel.DataAnnotations;
-using System.Text.Json.Serialization;
 using shared.Domain;
 
-namespace shared;
+namespace shared.DTOs;
 
-public class User : BaseEntity
+public class UserResponseDto : BaseEntity
 {
     [Key]
     public Guid Id { get; set; } = Guid.NewGuid();
@@ -21,12 +20,7 @@ public class User : BaseEntity
     public string Email { get; set; } = string.Empty;
 
 
-    [Required(ErrorMessage = "Mật khẩu không được phép bỏ trống!")]
-    [StringLength(100, ErrorMessage = "Mật khẩu không được phép quá 100 ký tự!")]
-    public string Password { get; set; } = string.Empty;
-
-
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    [StringLength(20, ErrorMessage = "Vai trò người dùng không được phép quá 20 ký tự!")]
     public UserRole Role { get; set; } = UserRole.User;
 
 
@@ -37,13 +31,10 @@ public class User : BaseEntity
     [StringLength(20, ErrorMessage = "Số điện thoại không được phép quá 20 ký tự!")]
     public string Phone { get; set; } = string.Empty;
 
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+
     public UserStatus Status { get; set; } = UserStatus.Active;
 
 
     [Required(ErrorMessage = "Kiểm tra xác thực email không được phép bỏ trống!")]
     public bool IsEmailVerified { get; set; } = false;
-
-
-    public ICollection<RefreshTokenRecords>? RefreshTokenRecords { get; set; }
 }

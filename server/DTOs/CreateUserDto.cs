@@ -2,14 +2,10 @@ using System.ComponentModel.DataAnnotations;
 using System.Text.Json.Serialization;
 using shared.Domain;
 
-namespace shared;
+namespace server.DTOs;
 
-public class User : BaseEntity
+public class CreateUserDto
 {
-    [Key]
-    public Guid Id { get; set; } = Guid.NewGuid();
-
-
     [Required(ErrorMessage = "Tên người dùng không phép bỏ trống!")]
     [StringLength(50, ErrorMessage = "Tên người dùng không được phép quá 50 ký tự!")]
     public string Name { get; set; } = string.Empty;
@@ -43,7 +39,4 @@ public class User : BaseEntity
 
     [Required(ErrorMessage = "Kiểm tra xác thực email không được phép bỏ trống!")]
     public bool IsEmailVerified { get; set; } = false;
-
-
-    public ICollection<RefreshTokenRecords>? RefreshTokenRecords { get; set; }
 }
