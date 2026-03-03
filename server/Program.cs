@@ -1,7 +1,5 @@
 using System.Text.Json.Serialization;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.Extensions.Configuration.Json;
-using Microsoft.Extensions.Options;
 using server.Data;
 using server.Filters;
 using server.Repositories;
@@ -34,7 +32,8 @@ builder.Services.AddDbContext<DataContext>(option =>
 
 // register DI container
 builder.Services.AddScoped<IUserRepository, UserService>();
-
+builder.Services.AddScoped<IRefreshTokenRepository, RefreshTokenService>();
+builder.Services.AddSingleton<TokenService>();
 
 var app = builder.Build();
 
